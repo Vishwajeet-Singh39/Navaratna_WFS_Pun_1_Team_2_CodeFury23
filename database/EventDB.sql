@@ -56,7 +56,7 @@ CREATE TABLE Quotation (
     vendor_id INT not null,
     user_id INT not null,
     plan_request_id INT not null,
-    status BOOLEAN not null,
+    status VARCHAR(20) not null,
     PRIMARY KEY (id),
     FOREIGN KEY (vendor_id)
 		REFERENCES Vendor (vendor_id),
