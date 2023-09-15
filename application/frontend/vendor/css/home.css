@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Open Sans',sans-serif;
+}
+.main-content{
+    height: 100vh;
+    background-color: #f1f3ff;
+}
+.content{
+    padding: 15px;
+    height: 100vh;
+    display: flex;
+    gap:2rem;
+}
+.blank{
+    background-color: #487FCC;
+    box-shadow: 0px 1px 4px #15223214;
+    height: 115px;
+    width: 100%;
+    position:absolute;
+}
+
+/* --------------------------------------------sidebar------------------------------------------ */
+.sidebar{
+    background-color: white;
+    width: 15%;
+    z-index: 1;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    display: block;
+    position: relative;
+}
+.cross{
+    display: none;
+}
+.logo{
+    /* border-bottom: 1px solid #DDDDDD; */
+    width: 100%;
+    height: 106px;
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+}
+.line{
+    border-bottom: 0.8px solid #DDDDDD;
+    /* width: 80%; */
+    justify-content: center;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+
+.text{
+    padding: 20px 20px 15px 20px;
+    display: flex;
+    gap:1rem;
+    font-size:16px;
+}
+.text span{
+    font-size: 14px;
+    color: black;
+    opacity: 1;
+}
+.text span i{
+    color: #7E84A3;
+}
+.text:hover{
+    
+    font-weight: bold;
+    background-color: #eff4fc ;
+    color: black;
+}
+
+.navactive
+{
+    background-color: #eff4fc;
+    border-left: 3px solid #386CB5;
+    font-weight: bold;
+    
+}
+.navactive span {
+    color: #386CB5;
+    opacity: 1;
+}
+.navactive span i{
+    color: #000000;
+}
+/* -----------------------------------------------main--------------------------------- */
+.main{
+    width: 85%;
+    border-radius: 10px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    padding-right: 18px;
+}
+
+/* ---------------------------------nav-bar--------------------------------------------------- */
+.main-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7%;
+}
+.main-left{
+    display: flex;
+    gap:1rem;
+}
+.main-left span{
+    color: white;
+    opacity: 0.8;
+    font-size: 15px;
+}
+.main-right{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap:1rem;
+}
+#bar-button{
+    display: none;
+}
+.sett{
+    display: none;
+}
+
+.sett-pop{
+    display: none;
+}
+
+.profile{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap:1rem;
+}
+
+.profile-img .above{
+    display: flex;
+    align-items: center;
+    gap:0.5rem;
+    height:100%;
+}
+.profile-img{
+    align-items: center;
+    position: 
+    relative;  
+}
+
+  
+#profile-pop{
+    position: absolute;
+    background:white;
+    display: none;
+    z-index: 999;
+    border-radius: 5px;
+    border:1px solid rgb(207, 196, 196);
+    right:2rem;
+    font-size: 10px;
+    top:46px;
+    width:120px;
+    
+}
+#profile-pop >div{
+    /* padding: 15px 10px 15px 10px; */
+    font-size: 13px;
+    align-items: center;
+    height: 25px;
+    gap: 0.5rem;
+    /* justify-content: center; */
+    display: flex;
+    padding: 1rem 0.5rem ;
+}
+#profile-pop >div:hover{
+    background-color: #eff4fc;
+}
+
+.profile-img span{
+    font-size: 12px;
+    color: white;
+    opacity: 0.8;
+}
+.circle{
+    background-color: #0062FF;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    padding: 7px 2px 1px 5px;
+    font-size: 12px;
+    color: white;
+}
+#name-img{
+    display: none;
+}
+#dp{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+.fa-chevron-down{
+    color: white;
+    opacity: 0.7;
+}
+
+
+
+/* ----------------------------------body------------------------------------------------ */
+.main-body{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.main-body::-webkit-scrollbar{
+    display: none;
+}
+
+
+
+
+
+.content {
+    padding: 20px;
+}
+
+/* Style for the password change form */
+.password-change-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 120px;
+    width: 500px;
+}
+
+.password-change-form h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.password-change-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+.password-change-form input[type="text"],
+.password-change-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.password-change-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.password-change-form button:hover {
+    background-color: #555;
+}
+
+ .profile-details {
+    margin: 0 auto;
+    padding: 20px;
+    width: 500px;
+    background-color:white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 120px;
+}
+
+
+.profile-details h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.profile-details label, .profile-details p {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px; /* Add some margin between label and text */
+}
+
+.quotation-list {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width:500px;
+    margin-top: 120px;
+
+}
+
+.quotation-list h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.quotation-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.quotation-item h3 {
+    font-size: 16px;
+    margin: 0;
+}
+
+ .plan-request-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 500px;
+    margin-top: 120px;
+}
+
+.plan-request-form h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-actions {
+    text-align: center;
+}
+
+.carousel-item img {
+    width: 100px; /* Set the desired width */
+    height: 700px; /* Set the desired height */
+}
+
+
+@media screen and (max-width:880px){
+    
+.body-1 > *{
+    flex: 1 1 46% !important;
+}
+}
+
+/* ----------------------------------------------------media query-------------------------------- */
+@media screen and (max-width:550px) {
+    .main-head{
+        gap:1rem;
+    }
+    .main-right{
+        height: auto;
+        /* flex-wrap: wrap-reverse; */
+        position: relative;
+    }
+    .sett{
+        display: block;
+    }
+    .body2-box{
+        width: 280px;
+        height: auto;
+    }
+    .sett-pop{
+        position: absolute;
+        background:white;
+        display: none;
+        z-index: 999;
+        padding: 1rem;
+        border-radius: 12px;
+        border:1px solid black;
+        right:0rem;
+        gap:1rem;
+        top:1.5rem;
+        width: 190px;
+    }
+    .sett-pop .profile-img span{
+        font-size: 12px;
+        color: black;
+        opacity: 0.8;
+    }
+
+    .sett-pop .add-school{
+        background: #386CB5;
+    }
+
+    .sett-pop .add-school .add{
+        color:white;
+    }
+
+    .setnone{
+        display: none;
+    }
+    
+    #profile-pop-2 div{
+        padding: 0.2rem ;
+        gap: 0.5rem;
+        display: flex;
+        align-items: center;
+        /* border-bottom: 0.3px solid rgb(203, 190, 190); */
+        font-size: 10px;
+    }
+}
+
+/* @media screen and (max-width:1000px){
+    .body-1 > *{
+        flex: 1 1 300px ;
+    } 
+    
+} */
+@media screen and (max-width:1200px) {
+    .school-table{
+        width:1200px;
+    }
+}
+
+@media screen and (max-width:1380px) {
+    .sidebar{
+        display: none;
+        position: absolute;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 100%;
+    }
+    .cross{
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        display: block;
+    }
+    #bar-button{
+        display: block;
+    }
+    .main{
+        width: 100%;
+    }
+
+    
+.body-1 > *{
+    flex: 1 1 20% ;
+} 
+
+.body-2 > *{
+    flex: 1 1
+}
+    /* myChart.canvas.parentNode.style.height = '128px'; */
+}
+
+/* @media screen and (max-width:1500px){
+    .body-1 > *{
+        flex: 1 1 130px ;
+    } 
+} */
+

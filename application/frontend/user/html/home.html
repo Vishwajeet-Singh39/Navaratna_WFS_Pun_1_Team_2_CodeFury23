@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <!-- <script type="module" src="../js/JSONDATA.js"></script> -->
+    <title>home</title>
+</head>
+<body >
+    <div class="main-content">
+        <div class="blank"></div>
+        <div class="content">
+            <div class="sidebar" id="side">
+                <div class="logo">
+                    <img src="../images/logo3.png" id="home-logo">
+                </div>
+                <div class="line"></div>
+                <div class="cross">
+                    <i class="fa fa-times" aria-hidden="true" style="cursor: pointer;" onclick="getBar()"></i>
+                </div>
+                <div class="points">
+                    <a href="../html/home.html" style="text-decoration: none;">    
+                        <div class="text" id="text-1" onclick="textactive(1)">
+                                <span id="grid-icon">
+                                    <i class="fa-solid fa-grip-horizontal" style="font-size: 15px;"></i>
+                                    <span>&nbsp Dashboard</span>
+                                </span>
+                        </div>
+                    </a>
+                    <a href="#" onclick="showChangeProfileForm()" style="text-decoration: none;">   
+                        <div class="text" id="text-4" onclick="textactive(4)">
+                            <span>
+                                <i class="fa-solid fa-user"></i>
+                                <span>&nbsp View Profile</span>
+                            </span>
+                        </div>
+                    </a>
+                    <a href="#" onclick="showChangePasswordForm()" style="text-decoration: none;">   
+                        <div class="text" id="text-2" onclick="textactive(2)">
+                            <span>
+                                <i class="fa fa-unlock-alt" style="color:grey; opacity: 0.8; font-size: 12px;"></i>
+                                <span>&nbsp Change Password</span>
+                            </span>
+                        </div>
+                    </a>
+                    <a href="#" style="text-decoration: none;" onclick="showChangeRequestForm()">   
+                        <div class="text" id="text-3" onclick="textactive(3)">
+                            <span>
+                                <i class="fa fa-paper-plane" style="color:grey; opacity: 0.8; font-size: 12px;"></i>
+                                <span>&nbsp Send Plan Request</span>
+                            </span>
+                        </div>
+                    </a>
+                    <a href="#" onclick="showChangeQuotationForm()" style="text-decoration: none;">   
+                        <div class="text" id="text-5" onclick="textactive(5)">
+                            <span>
+                                <i class='far fa-address-book' style="font-size: 16px;"></i>
+                                <span>&nbsp View Quotation</span>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="main" id="page-content">
+                <div class="main-head">
+                    
+                    <div class="main-left">
+                        <span id="bar-button" onclick="getBar()"><i class="fa-solid fa-bars"  style="cursor: pointer;"></i></span>
+                        <span class="dash">Dashboard</span>
+                    </div>
+                    <div class="main-right">
+                        <div class="profile">
+                            <div class="sett">
+                                <i style="color:white;" class="fa-solid fa-cog" onclick="handlesetting()"></i>
+                            </div>
+
+                            <div class="profile-img setnone"  >
+                                <div class="above">
+                                    <img src="../images/avatar.png" alt="" id="dp" onclick="ChangeImage()">
+                                    <div class="circle" id="name-img" onclick="ChangeImage()"> VM</div>
+                                    <span>Welcome User!</span>
+                                    <i class="fa-solid fa-chevron-down" onclick="getProfilePop()" style="cursor: pointer;" ></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="profile-pop" onblur="setNone()">
+                           
+                            <div onclick="location.href = 'login.html';" id="profile-pop-id">
+                                <div><i class="fa fa-sign-out" aria-hidden="true" style="color:black; opacity: 0.8; font-size: 10px;"></i></div>
+                                <div> Sign Out</div>
+                            </div>
+                        </div>
+                        <div class="sett-pop" id="pop" onblur="setNone()">
+                            <div class="profile-img">
+                                <div class="above">
+                                    <img src="../images/avatar.png" alt="" id="dp" onclick="ChangeImage()">
+                                    <div class="circle" id="name-img" onclick="ChangeImage()"> VM</div>
+                                    <span>Vincent Williams</span>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div id="profile-pop-2" style="display: block;">
+                                <div id="profile-pop-id" >
+                                    <div><i class="fa-solid fa-eye" style="color:black; opacity: 0.8; font-size: 10px;"></i></div>
+                                    <div> View Profile</div>
+                                </div>
+                                <div id="profile-pop-id">
+                                    <div><i class='fas fa-globe-africa' style="color:black; opacity: 0.8; font-size: 10px;"></i></div>
+                                    <div> Visit Website</div>
+                                </div>
+                                <div id="profile-pop-id">
+                                   <div><i class="fa fa-question-circle" aria-hidden="true" style="color:black; opacity: 0.8; font-size: 10px;"></i></div> 
+                                   <div>Help Center</div>
+                                </div>
+                                <div onclick="location.href = 'login.html';" id="profile-pop-id">
+                                    <div><i class="fa fa-sign-out" aria-hidden="true" style="color:black; opacity: 0.8; font-size: 10px;"></i></div>
+                                    <div> Sign Out</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="main-body">
+                   <!-- <h2>hello</h2> -->
+                </div>
+    </div>
+
+
+
+    <!-- <script type="module" src="../js/jsondata.js"></script> -->
+    <script src="../js/home.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

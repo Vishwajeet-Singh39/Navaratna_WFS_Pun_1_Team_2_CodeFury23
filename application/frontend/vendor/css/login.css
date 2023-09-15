@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    background-image: url('../images/Bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* font-family: open sans; */
+}
+
+/* -------------------------------------logo-------------------------------------------- */
+#cronical{
+    width: 371px;
+    height: 206px;
+}
+/* --------------------------------------box----------------------------------------------- */
+.main-content{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+}
+.login-box{
+    background-color: #FFFFFF;
+    width: 100%;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0px 1px 6px #00000029;
+    border-radius: 20px;
+    padding: 15px;
+    position: relative;
+}
+.box{
+    width: 340px;
+    position: relative;
+}
+.login-box>div, .form-box>div{
+    margin:15px;  
+}
+.heading{
+    font-size: 20px;
+    font-weight: 999;
+    display: flex;
+    justify-content: center;
+    /* color: initial; */
+    /* font: normal normal bold 24px/33px Open Sans;
+    color: #000000; */
+    /* font-display:unset; */
+}
+/*-------------------------------------------------username & pasword input-------------------------------- */
+.username-text{
+    text-align: left;
+    font-size: 12px;
+    color: #000000;
+    opacity: 0.5;
+}
+.inputbox input{
+    position: absolute;
+    top: 0;
+    align-items: center;
+    height: 100%;
+    background-color: transparent;
+    display: inline-block;
+    border: none;
+    padding-left: 2px;
+    left: 37px;
+}
+.username{
+    background-color: #F7FAFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 6px;
+    opacity: 1;
+    display: flex;
+    height: 40px;
+    position: relative;
+}
+#username{
+    width: 77%;
+    border: none;
+    position: absolute;
+}
+.username-img{
+    width: 14%;
+    padding: 9px 10px 9px 10px;
+    height: auto;
+    position: relative;
+    align-items: center;
+}
+.password-box{
+    background-color: #F7FAFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 6px;
+    opacity: 1;
+    display: flex;
+    height: 40px;
+    position: relative;
+}
+#pass{
+    width: 80%;
+    border: none;
+    position: absolute;
+}
+#username:focus,#pass:focus ,input:not(:placeholder-shown){
+    outline: none;
+    border-bottom:2px solid #386CB5;
+    padding-top: 15px;
+}
+.error{
+    padding-left: 5px;
+    height: 20px;
+}
+#username-error,#pass-error{
+    color: red;
+    font-weight: bold;
+    font-size: 12px;
+    opacity: 0.6;
+}
+#pass-img{
+    width: 13%;
+    padding: 9px 8px 9px 8px;
+    position: absolute;
+    height: 100%;
+}
+#eye-img{
+    height: 100%;
+    padding: 9px 8px 9px 8px;
+    mix-blend-mode: multiply;
+    filter: contrast(1);
+    position: absolute;
+    left:87%;
+    cursor: pointer;
+}
+#pass{
+    width:76%
+}
+.inputbox label {
+    color: #222222;
+    opacity: 1;
+    font-weight: bold;
+    transition: 0.5s ease-in-out;;
+    left: 42px;
+    top: -1px;
+    font-size: 14px;
+    position: absolute;
+    pointer-events: none;
+    transform: translateY(10px);
+}
+
+.inputbox input:not(:placeholder-shown) + label,
+.inputbox input:focus + label{
+    transform:  translateX(-3px) translateY(4px) !important;
+    font-size: 10px !important;
+    opacity: 0.6 !important;
+}
+/* --------------------------------login---------------------------------------------------------------- */
+.log-button{
+    background: transparent linear-gradient(270deg, #386CB5 0%, #669FED 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 5px #386CB566;
+    border-radius: 6px;
+    opacity: 1;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-size: 11px;
+    border: none;
+    width: 100%;
+    height: 38px;
+}
+.log-button:active{
+    background: transparent linear-gradient(270deg, #011e47 0%, #084190 100%) 0% 0% no-repeat padding-box;
+}
+.log-button:disabled{
+    background: transparent linear-gradient(90deg, #91a4bf 0%, #6481ab 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 5px #386CB566;
+}
+/* --------------------------------------------------register----------------------- */
+.register{
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.span-text{
+    font-size: 12px;
+    font-weight: bold;    
+    align-items: center;
+    margin-top: 10px;
+}
+.register-button{
+    background-color: #fdbe00 ;
+    box-shadow: 0px 1px 10px #0000001A;
+    border-radius: 6px;
+    opacity: 1;
+    border: none;
+    color: white;
+    height: 35px;
+    padding: 11px;
+    font-size: 10px;
+}
+.register-button:active{
+    background-color: #c79500;
+    opacity: 1;
+}
+/* ----------------------------------forgot-remember------------------------------- */
+.remember span{
+    margin-left: 5px;
+    color: #000000BF;
+}
+.remember{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.forgot-text{
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+.forgot-link{
+    text-decoration: none;
+    color: #0974DD;
+    font-weight: bold;
+}
+
+/* ------------------------------remember me --------------------------------------- */
+ .round {
+    position: relative;
+  }
+  
+  .round label {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 15px;
+    left: 0;
+    position: absolute;
+    top: -8px;
+    width: 15px;
+  }
+/* ---------------------------------------------bottom-text------------------------------ */
+.bottom-text{
+    margin: 15px 12px 10px 12px;
+    color: #000000;
+    font-size: 12px;
+    width: 90%;
+    text-align: center;
+    font-family: sans-serif;
+}
+/* ----------------------------------------------media query------------------------------------ */
+@media only screen and (max-width : 750px) {
+        .main-content{
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        .box{
+            width: 300px;
+        }
+        #cronical{
+            width: 200px;
+            height: 60px;
+        }
+        #eye-img{
+            padding: 9px 5px 9px 5px;
+        }
+        .username-img{
+            /* padding: 3px 0px 3px 0px; */
+            padding:9px 7px 9px 7px;
+        }
+        #pass-img{
+            padding: 11px 5px 11px 5px;
+        }
+} 
+
+
+@media only screen and (max-height : 560px) {
+    .main-content{
+        height: auto;
+        /* justify-content: cen; */
+    }
+    
+}
+
+
+/* ---------------------nav bar---------------------------- */
+nav{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    padding: 60x 80px;
+    box-sizing: border-box;
+    background: transparent linear-gradient(90deg, #000000 0%, #aba1a1 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 5px #0f5fcd66;
+    border-bottom: 1px solid #fff;
+}
+nav .logo{
+    padding: 10px 20px;
+    height: 80px;
+    float: left;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: Cursive;
+}
+nav ul{
+    list-style: none;
+    float: right;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+nav ul li a{
+    line-height: 60px;
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: cursive;
+}
+nav ul li a:hover{
+    background: rgba(240, 234, 234, 0.7);
+    border-radius: 6px;
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+</head>
+<body >
+    <div class="main-content">
+       
+        <div class="logo-div">
+            <img class="logo-img" src="../images/logo3.png">
+        </div>
+        <div class="box">
+            <div class="form-main-div">
+                <div class="heading" >
+                    <div class="registration-heading">
+                        REGISTRATION
+                    </div>
+                    <div class="steps">
+                        <div id="step-1"><sapn id="step1-span">STEP 01</sapn></div>
+                        <div id="step-2"><span id="step2-span">STEP 02</span></div>
+                    </div>
+                </div>
+            <div class="form-div-1">
+            <form action="" class=form name="form-1" id="form-1">
+                <div id="div-1">
+                    <div class="name-div">
+                        <div class="fname-div">
+                            <input class="fname-input" type="text" name="fname" id="firstname" placeholder=" " autocomplete="off">
+                            <label class="fname-label" for="firstname">First Name</label>
+                            <span id="fname-error"></span>
+                        </div>
+                        <div class="lname-div">       
+                            <input class="lname-input" type="text" name="lname" id="lastname" placeholder=" " autocomplete="off">
+                            <label class="lname-label" for="lastname">Last Name</label>
+                            <span id="lname-error"></span>
+                        </div>
+                    </div>    
+                    <div class="email-div">
+                        <img class="email-img" src="../images/mail.png" alt="">
+                        <input class="email-input" type="email" id="floatingLabel" name="email" placeholder=" ">
+                        <label class="email-label" for="floatingLabel">Email</label>
+                        <span id="email-error"></span>
+                    </div>
+                    <div class="username-div">
+                        <img class="username-img" src="../images/username2.png" alt="">
+                        <input class="username-input" type="username" id="username" name="username" placeholder=" ">
+                        <label class="username-label" for="username">Username</label>
+                        <span id="username-error"></span>
+                    </div>
+                    <div class="mobile-div">
+                        <input class="mobile-input" type="tel"  name ="mobile" id="phone"  placeholder="Mobile Number " maxlength="10">
+                        <span id="mobile-error"></span>
+                    </div>
+                    <div class="heading-div-2">
+                        Create Password
+                    </div>
+    
+                    <div class="password-div">
+                        <input class="password-input" type="password" placeholder=" " name="pass" id="pass" maxlength="16" minlength="6">
+                        <label class="password-label"for="placeholder">Password </label>
+                        <img onclick="PassGetVisibility()" src="../images/view.png" id="pass-img">
+                        <span id="pass-error" ></span>
+                    </div>
+                    <div class="password-div">
+                        <input class="password-input" type="password" placeholder=" " name="cpass" id="cpass" maxlength="16" minlength="6"> 
+                        <label class="password-label"for="placeholder">Confirm Password</label>
+                        <img onclick="CPassGetVisibility()" src="../images/view.png" id="cpass-img">
+                        <span id="cpass-error"></span>
+                    </div>
+                    <div class="button-div">
+                        <button class="button-div-1" id="next-step-id"  type="submit" disabled> Next Step &#8594; </button>
+                    </div>
+                    <div class="bottom-borderline"></div>
+                    <div class="content-div">
+                        <div class="content-div-2">
+                            Do have an account?
+                        </div>
+                        <div class="">
+                            <button  onclick="location.href = 'login.html';" type="button"  class="button-div-2">LOGIN</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <form action="./login.html" class="form-box-2" name="form-2" id="form-2" >
+                <div id="div-2">
+                    <div class="input-box">
+                        <input class="dob-input" type="date" placeholder=" " id="dob" name="dob">
+                        <label class="dob-label">Date of Birth*</label>
+                        <span id="dobError"></span>
+                    </div>
+                    <div class="input-box">
+                        <input class="institute-input" type="text" placeholder=" " name="inst" id="inst">
+                        <label class="institute-label">Department(Marketing/Sales/IT)* </label>
+                        <span id="inst-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <input class="state-input" type="text" placeholder=" " name="st" id="st">
+                        <label class="state-label" for="st">State*</label>
+                        <span id="st-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <input class="city-input" type="text" placeholder=" " name="cty" id="cty">
+                        <label class="city-label" for="cty">City*</label>
+                        <span id="cty-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <input class="Country-input" type="text" placeholder=" " name="ct" id="ct">
+                        <label class="Country-label" for="ct">Country*</label>
+                        <span id="ct-error"></span>
+                    </div>
+                    <div class="input-box">
+                        <input class="zip-input" type="text" placeholder=" " name="zp" id="zp" maxlength="6" autocomplete="postal-code" >
+                        <label class="zip-label" for="zp">Zip Code*</label>
+                        <span id="zp-error"></span>
+                    </div>
+                    <div class="terms">
+                        <!-- <input type="radio" name="check-term" id="term-tick" class="terms-radio"> -->
+                        <div class="round">
+                            <!-- <input type="checkbox"  id="checkbox" /> -->
+                            <label id="checkbox" ><i class="fa-solid fa-check" style="color:white" ></i></label>
+                        </div>
+                        <span class="terms-text"><span class="terms-greytext">I agree to the</span><span class="terms-blueText"> Terms of service </span><span class="terms-greytext">and </span><span class="terms-blueText">Privacy Policy.</span></span>
+                    </div>
+                    <div class="back-next">
+                        <button onclick="BackPage()" type="button" class="back-btn">← Step Back</button>
+                        <button type="submit" id="submit-button"  disabled >Create Account</button>
+                        
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+        <div class="bottom-text">
+            © 2022 All rights reserved <b>Powered with 9 Ratan Event Planning</b>
+        </div>
+        </div>
+    </div>
+
+    <script>
+
+          const Form1 = document.querySelector('form');
+          Form1.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Get the username and password from the form fields
+           const username = document.getElementById('username').value;
+           const password = document.getElementById('pass').value;
+           // Save the username and password to localStorage
+           localStorage.setItem('username', username);
+           localStorage.setItem('password', password);
+
+            const fd = new FormData(Form1);
+            const obj = Object.fromEntries(fd);
+            const json = JSON.stringify(obj);
+            console.log(json)
+            localStorage.setItem('form',json);
+          });
+         
+ 
+
+
+//        const Form1 = document.querySelector('form');
+//        Form1.addEventListener('submit', event => {
+//        event.preventDefault();
+//        const formData = new FormData(Form1);
+//        console.log(formData.get('fname')); 
+//        const data = Object.fromEntries(formData);
+//        console.log(data);
+
+//        fetch('https://reqres.in/api/users' , {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type' : 'application/json'
+//         },
+//         body: JSON.stringify(data)
+//        }).then(res => res.json())
+//          .then(data => console.log(data))
+//          .catch(error => console.log(error));
+// });
+
+    </script>
+    
+</body>
+<script src="../js/signup.js"></script>
+<script src="../js/signup_validation.js"></script>
+</html>

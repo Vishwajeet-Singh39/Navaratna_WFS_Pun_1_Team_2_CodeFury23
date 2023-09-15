@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <title>login</title>
+</head>
+<body>
+    <nav class="nav-level">
+        <div class="logo">9 Ratan Planner</div>
+        <ul>
+            <li><a href="../../home/html/home.html">Home</a></li>
+        </ul>
+        
+    </nav>
+    <div class="main-content">
+        <div class="cronical-logo">
+            <img src="../images/logo3.png" id="cronical">
+        </div>
+        
+        <div class="box">
+            <div class="login-box">
+                <div class="heading" >
+                    VENDOR LOGIN
+                </div>
+                <form class="form-box" name="form" id="form" action="home.html">
+                    <div class="inner-box">
+                        <div class="username">
+                            <img src="../images/username2.png" class="username-img">
+                            <div class="inputbox">
+                                <input type="text" id="username" required name="username"  placeholder=" ">
+                                <label>Username</label>
+                            </div>
+                        </div>    
+                        <div class="error">
+                            <span id="username-error"></span>   
+                        </div>
+                    </div>           
+                    <div class="inbox">
+                        <div class="password-box">
+                            <img src="../images/lock.png" id="pass-img">
+                            <div class="inputbox">
+                                <input type="password" id="pass" required name="pass" placeholder=" ">
+                                <label>Password</label>
+                            </div>
+                            <img onclick="getVisibility()" src="../images/view.png" id="eye-img">
+                        </div>
+                        <div class="error">
+                            <span id="pass-error"></span>
+                        </div>
+                    </div>
+                        
+                    <div class="login-button">
+                        <button  id="log-button-id" class="log-button" onclick="getUserDetails()">LOGIN</button>
+                    </div>
+                </form>
+            </div>
+            <div class="bottom-text">
+                © 2023 All rights reserved 9 Ratan Event Planning </b>
+            </div>
+        </div>
+    </div>
+    <script src="../js/login.js"></script>
+</body>
+</html>
