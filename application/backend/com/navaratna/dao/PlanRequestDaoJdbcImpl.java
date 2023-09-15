@@ -20,6 +20,8 @@ public class PlanRequestDaoJdbcImpl implements PlanRequestDao{
 	
 	private Connection connection=null;
 	private Statement stmt=null;
+	
+//	Function to opening resources all at once
 	public void openResource() throws SQLException, ClassNotFoundException{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("Driver is loaded...");
@@ -28,6 +30,7 @@ public class PlanRequestDaoJdbcImpl implements PlanRequestDao{
 			stmt=connection.createStatement();
 	}
 	
+//	Function to closing resources all at once
 	private void closeResource() {
 		try {
 			connection.close();
@@ -38,6 +41,7 @@ public class PlanRequestDaoJdbcImpl implements PlanRequestDao{
 		}
 	}
 	
+//	Function to create PlanRequest
 	@Override
 	public boolean createPlanRequest(PlanRequest request) throws AlreadyExistsException, ValidationException,ClassNotFoundException, SQLException {	
 		boolean isAdded=false;
@@ -74,14 +78,12 @@ public class PlanRequestDaoJdbcImpl implements PlanRequestDao{
 		if(record>0) {
 			isAdded=true;
 		}
-		
-		
-		
 		connection.commit();	
 		closeResource();
 		return isAdded;
 	}
 	
+//	Function to get specific plan request
 	@Override
 	public PlanRequest getPlanRequest(int requestId) throws NotFoundException,ClassNotFoundException, SQLException {
 		PlanRequest request = null;
@@ -125,26 +127,16 @@ public class PlanRequestDaoJdbcImpl implements PlanRequestDao{
 		return request;
 	}
 	
-	
+//	Function to show all the available planRequest to vendors
+	@Override
 	public List<PlanRequest> getPlanRequestList() throws NotFoundException,ClassNotFoundException, SQLException {
-		PlanRequest request;
 	    List<PlanRequest> requestList=new ArrayList<PlanRequest>();
-	    List<ServiceList> listOfService = new ArrayList<ServiceList>();
 		openResource();
 		String query = "SELECT * FROM PlanRequest";
 		ResultSet rs = stmt.executeQuery(query);
-		while (rs.next()) {
-		    request=new PlanRequest(rs.getInt("plan_request_id"),
-		    									rs.getDate("from_date"),
-		    									rs.getDate("to_date"),
-		    									rs.getInt("no_of_persons"),
-		    									rs.getString("package_type"),
-		    									null
-		    									);
-		    requestList.add(request);
+		while (rs.next()) {		    
+		    requestList.add(getPlanRequest(rs.getInt("plan_request_id")));
 		}
-			
-
 		closeResource();
 		return requestList;
 	}

@@ -165,7 +165,7 @@ public class UserApplication {
 				serviceList.add("Decoration");
 				serviceList.add("Photo");
 				
-				PlanRequest sendRequest=new PlanRequest(5,fromDate,toDate,90,1);
+				PlanRequest sendRequest=new PlanRequest(5,fromDate,toDate,90,"basic",null);
 				boolean isAddedRequest;
 				try {
 					isAddedRequest = service.sendPlanRequest(sendRequest);

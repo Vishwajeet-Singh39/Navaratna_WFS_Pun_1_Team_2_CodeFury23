@@ -20,6 +20,53 @@ public class VendorServiceImpl implements VendorService {
 	PlanRequestDao planRequestDao;
 	PackageDao packDao;
 
+	public VendorServiceImpl() {
+		super();
+	}
+	
+	public VendorServiceImpl(VendorDao vendorDao, QuotationDao quoteDao, PlanRequestDao planRequestDao,
+			PackageDao packDao) {
+		super();
+		this.vendorDao = vendorDao;
+		this.quoteDao = quoteDao;
+		this.planRequestDao = planRequestDao;
+		this.packDao = packDao;
+	}
+	
+	
+
+	public VendorDao getVendorDao() {
+		return vendorDao;
+	}
+
+	public void setVendorDao(VendorDao vendorDao) {
+		this.vendorDao = vendorDao;
+	}
+
+	public QuotationDao getQuoteDao() {
+		return quoteDao;
+	}
+
+	public void setQuoteDao(QuotationDao quoteDao) {
+		this.quoteDao = quoteDao;
+	}
+
+	public PlanRequestDao getPlanRequestDao() {
+		return planRequestDao;
+	}
+
+	public void setPlanRequestDao(PlanRequestDao planRequestDao) {
+		this.planRequestDao = planRequestDao;
+	}
+
+	public PackageDao getPackDao() {
+		return packDao;
+	}
+
+	public void setPackDao(PackageDao packDao) {
+		this.packDao = packDao;
+	}
+
 	@Override
 	public boolean vendorLogin(Vendor vendor) throws ClassNotFoundException, NotFoundException, SQLException {
 		Vendor crossCheck = vendorDao.getVendor(vendor.getVendorId());
@@ -28,6 +75,12 @@ public class VendorServiceImpl implements VendorService {
 		}
 		return false;
 	}
+	
+	@Override
+	public Vendor getVendorInfo(Vendor vendor) throws ClassNotFoundException, NotFoundException, SQLException {
+		return vendorDao.getVendor(vendor.getVendorId());
+	}
+	
 
 	@Override
 	public boolean createQuotation(Quotation quotation) throws AlreadyExistsException , SQLException, ClassNotFoundException {
@@ -35,8 +88,8 @@ public class VendorServiceImpl implements VendorService {
 	}
 
 	@Override
-	public List<PlanRequest> getPlanRequestList() {
-		return planRequestDao.readPlanRequest();
+	public List<PlanRequest> getPlanRequestList() throws ClassNotFoundException, NotFoundException, SQLException {
+		return planRequestDao.getPlanRequestList();
 		
 	}
 

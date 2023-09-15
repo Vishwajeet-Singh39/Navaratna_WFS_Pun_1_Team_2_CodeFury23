@@ -11,4 +11,5 @@ import com.navaratna.model.PlanRequest;
 public interface PlanRequestDao {
 	public boolean createPlanRequest(PlanRequest request) throws AlreadyExistsException, ValidationException,ClassNotFoundException, SQLException;
 	public PlanRequest getPlanRequest(int requestId) throws NotFoundException,ClassNotFoundException, SQLException;
+	public List<PlanRequest> getPlanRequestList() throws NotFoundException,ClassNotFoundException, SQLException;
 }

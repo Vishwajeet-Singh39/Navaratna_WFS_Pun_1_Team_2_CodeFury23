@@ -99,6 +99,12 @@ public class Vendor {
 	public void setContactNo(long contactNo) {
 		this.contactNo = contactNo;
 	}
+
+	@Override
+	public String toString() {
+		return "Vendor [vendorId=" + vendorId + ", username=" + username + ", password=" + password + ", name=" + name
+				+ ", address=" + address + ", email=" + email + ", contactNo=" + contactNo + "]";
+	}
 	
 	
 	

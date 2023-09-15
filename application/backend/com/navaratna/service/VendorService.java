@@ -12,8 +12,9 @@ import com.navaratna.model.Vendor;
 
 public interface VendorService {
 	public boolean vendorLogin(Vendor vendor) throws ClassNotFoundException, NotFoundException, SQLException;
+	public Vendor getVendorInfo(Vendor vendor) throws ClassNotFoundException, NotFoundException, SQLException;
 	public boolean createQuotation(Quotation quotation) throws AlreadyExistsException , SQLException, ClassNotFoundException;
-	public List<PlanRequest> getPlanRequestList();
+	public List<PlanRequest> getPlanRequestList()  throws ClassNotFoundException, NotFoundException, SQLException ;
 	public boolean addPackage(Package pack) throws ClassNotFoundException, AlreadyExistsException, SQLException;
 	
 }

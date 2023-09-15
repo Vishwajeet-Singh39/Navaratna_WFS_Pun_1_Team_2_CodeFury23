@@ -6,17 +6,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.List;
 
 import com.navaratna.exception.AlreadyExistsException;
 import com.navaratna.exception.NotFoundException;
-import com.navaratna.model.User;
 import com.navaratna.model.Vendor;
 
 public class VendorDaoJdbcImpl implements VendorDao {
 	
 	private Connection connection=null;
 	private Statement stmt=null;
+//	Function to opening resources all at once
 	public void openResource() throws SQLException, ClassNotFoundException{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("Driver is loaded...");
@@ -25,6 +24,7 @@ public class VendorDaoJdbcImpl implements VendorDao {
 			stmt=connection.createStatement();
 	}
 	
+//	Function to closing resources all at once
 	private void closeResource() {
 		try {
 			connection.close();
@@ -35,6 +35,7 @@ public class VendorDaoJdbcImpl implements VendorDao {
 		}
 	}
 
+//	Function for adding new vendors
 	@Override
 	public boolean addVendor(Vendor vendor) throws AlreadyExistsException, SQLException, ClassNotFoundException {
 		openResource();
@@ -71,7 +72,7 @@ public class VendorDaoJdbcImpl implements VendorDao {
 		return result;
 	}
 
-
+// Function to get vendors by id
 	@Override
 	public Vendor getVendor(int vendorId) throws NotFoundException, SQLException, ClassNotFoundException {
 		Vendor vendor=null;

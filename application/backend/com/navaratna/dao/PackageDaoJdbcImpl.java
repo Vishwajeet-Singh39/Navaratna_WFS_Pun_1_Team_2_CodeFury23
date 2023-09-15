@@ -19,6 +19,7 @@ public class PackageDaoJdbcImpl implements PackageDao {
 	private Connection connection=null;
 	private Statement stmt=null;
 	
+//	Function to opening the resources all at once
 	public void openResource() throws SQLException, ClassNotFoundException{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("Driver is loaded...");
@@ -27,6 +28,7 @@ public class PackageDaoJdbcImpl implements PackageDao {
 			stmt=connection.createStatement();
 	}
 	
+//	Function to closing resources all at once
 	private void closeResource() {
 		try {
 			connection.close();

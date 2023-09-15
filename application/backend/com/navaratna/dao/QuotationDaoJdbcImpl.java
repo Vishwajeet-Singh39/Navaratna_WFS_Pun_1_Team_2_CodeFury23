@@ -20,6 +20,7 @@ public class QuotationDaoJdbcImpl implements QuotationDao{
 	private Connection connection=null;
 	private Statement stmt=null;
 	
+//	Function to opening resources all at once
 	public void openResource() throws SQLException, ClassNotFoundException{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("Driver is loaded...");
@@ -28,6 +29,7 @@ public class QuotationDaoJdbcImpl implements QuotationDao{
 			stmt=connection.createStatement();
 	}
 	
+//	//	Function to closing resources all at once
 	private void closeResource() {
 		try {
 			connection.close();
@@ -38,6 +40,7 @@ public class QuotationDaoJdbcImpl implements QuotationDao{
 		}
 	}
 
+//	Function to create a quotation for any plan request
 	@Override
 	public boolean addQuotation(Quotation quote) throws AlreadyExistsException , SQLException, ClassNotFoundException{
 		openResource();
@@ -96,7 +99,7 @@ public class QuotationDaoJdbcImpl implements QuotationDao{
 		
 	}
 
-	
+//	Function to get quotation info via quotationId
 	@Override
 	public Quotation getQuotation(int quotationId) throws NotFoundException, SQLException, ClassNotFoundException  {
 		
@@ -145,6 +148,7 @@ public class QuotationDaoJdbcImpl implements QuotationDao{
 		
 	}
 
+//	Function to change the status of the quotation to accepted or rejected
 	@Override
 	public boolean updateQuotationStatus(Quotation quote) throws ClassNotFoundException, SQLException {
 		boolean isUpdated=false;
@@ -162,10 +166,10 @@ public class QuotationDaoJdbcImpl implements QuotationDao{
 		closeResource();
 		return isUpdated;
 	}
-
+	
+//	Function to get all the quotation recieved by any user
 	@Override
 	public List<Quotation> getAllQuotationByUserId(int userId) throws NotFoundException, ClassNotFoundException, SQLException {
-		Quotation quotation=null;
 		List<Quotation> quotationList=new ArrayList<>();
 		openResource();
 			
